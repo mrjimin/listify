@@ -10,7 +10,11 @@ class CORSConfig : WebMvcConfigurer {
         registry.addMapping("/**")
             // .allowedOrigins("http://localhost:5173")
             // .allowedOrigins("https://listify7.vercel.app/")
-            .allowedOrigins("https://listify.life")
+            .allowedOrigins(
+                "https://listify.life",
+                "https://listify7.vercel.app",
+                "http://localhost:5173"
+            )
             .allowedMethods("*")
             .allowCredentials(true)
     }
