@@ -2,19 +2,15 @@ spring:
   application:
     name: listify
 
-  config:
-    import: optional:file:.env[.properties]
-
   security:
     oauth2:
       client:
         registration:
           spotify:
-            client-id: ${spotify.client-id}
-            client-secret: ${spotify.client-secret}
-            provider: spotify
+            client-id: ${SPOTIFY_CLIENT_ID}
+            client-secret: ${SPOTIFY_CLIENT_SECRET}
             authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/spotify"
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             scope:
               - user-read-private
               - user-read-email
@@ -27,7 +23,5 @@ spring:
             user-info-uri: https://api.spotify.com/v1/me
             user-name-attribute: id
 
-spotify:
-  client-id: ${CLIENT_ID}
-  client-secret: ${CLIENT_SECRET}
-  redirect-uri: ${REDIRECT_URI}
+server:
+  port: 9090

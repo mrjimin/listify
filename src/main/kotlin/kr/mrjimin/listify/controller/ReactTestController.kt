@@ -7,8 +7,14 @@ import java.util.Date
 @RestController
 class ReactTestController {
 
-    @GetMapping("/api")
+    @GetMapping("/api/time")
+    fun time(): Date {
+        return Date()
+        // return "안녕하세요. 현재 서버시간은 ${Date()} 입니다. :)"
+    }
+
+    @GetMapping("/api/hello")
     fun hello(): String {
-        return "안녕하세요. 현재 서버시간은 ${Date()} 입니다."
+        return "Hello World!"
     }
 }

@@ -1,0 +1,4 @@
+spotify:
+  client-id: test
+  client-secret: test
+  redirect-uri: http://localhost/test

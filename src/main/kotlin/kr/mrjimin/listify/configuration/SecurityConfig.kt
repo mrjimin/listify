@@ -14,7 +14,7 @@ class SecurityConfig {
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http
             .authorizeHttpRequests { auth ->
-                auth.requestMatchers("/", "/index.html", "/assets/**", "/static/**", "/favicon.ico").permitAll()
+                auth.requestMatchers("/", "/api/time", "/index.html", "/assets/**", "/static/**", "/favicon.ico").permitAll()
                 auth.anyRequest().authenticated()
             }
             .oauth2Login { oauth ->

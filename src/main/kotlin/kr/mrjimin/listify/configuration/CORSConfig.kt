@@ -9,7 +9,8 @@ class CORSConfig : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
             // .allowedOrigins("http://localhost:5173")
-            .allowedOrigins("https://listify7.vercel.app/")
+            // .allowedOrigins("https://listify7.vercel.app/")
+            .allowedOrigins("https://listify.life/")
             .allowedMethods("*")
     }
 }
