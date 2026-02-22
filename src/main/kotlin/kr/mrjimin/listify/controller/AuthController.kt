@@ -1,16 +1,18 @@
 package kr.mrjimin.listify.controller
 
-import kr.mrjimin.listify.service.SpotifyAPIService
+import kr.mrjimin.listify.config.SpotifyConfig
+import kr.mrjimin.listify.config.SpotifyProperties
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
+import se.michaelthelin.spotify.SpotifyApi
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeUriRequest
 
 @RestController
 @RequestMapping("/api")
 class AuthController(
-    private val spotifyAPIUtil: SpotifyAPIService,
+    private val api: SpotifyApi,
 ) {
 
 //    @GetMapping("/token")
@@ -22,7 +24,7 @@ class AuthController(
     @GetMapping("/login")
     @ResponseBody
     fun login(): String {
-        val authorizationCodeUriRequest: AuthorizationCodeUriRequest = spotifyAPIUtil.spotifyAPI.authorizationCodeUri()
+        val authorizationCodeUriRequest: AuthorizationCodeUriRequest = api.authorizationCodeUri()
             .scope("user-read-birthdate,user-read-email")
             .show_dialog(true)
             .build()

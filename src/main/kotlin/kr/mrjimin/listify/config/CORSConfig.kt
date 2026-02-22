@@ -1,4 +1,4 @@
-package kr.mrjimin.listify.configuration
+package kr.mrjimin.listify.config
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.CorsRegistry

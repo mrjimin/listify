@@ -1,4 +1,4 @@
-package kr.mrjimin.listify.configuration
+package kr.mrjimin.listify.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 
